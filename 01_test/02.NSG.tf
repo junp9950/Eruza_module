@@ -32,7 +32,7 @@ resource "azurerm_network_security_group" "nsg_was" {
     direction                  = var.was_direction #방향(in,out)
     access                     = var.was_access    #작업(허용,거부)
     protocol                   = var.was_protocol  #프로토콜
-    source_port_range          = var.was_sport     #원본포트범위
+    source_port_range          = var.was_sport     #원본포트범위d
     destination_port_range    = var.was_dport     #대상포트범위 (실제포트번호)
     source_address_prefix      = var.was_sprefix
     destination_address_prefix = var.was_dprefix
@@ -43,7 +43,7 @@ resource "azurerm_network_security_group" "nsg_was" {
   ]
 
 
-
+#
 }
 
 resource "azurerm_network_security_group" "jw_nsg_db" {
