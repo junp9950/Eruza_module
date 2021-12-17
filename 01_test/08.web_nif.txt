@@ -1,0 +1,15 @@
+resource "azurerm_network_interface" "jw_web_vm_nif" {
+    name = "jw_web_vm_nif"
+    location = azurerm_resource_group.jw_rg.location
+    resource_group_name = azurerm_resource_group.jw_rg.name
+
+    ip_configuration {
+      name = "web_vm_pub"
+      subnet_id = azurerm_subnet.web_subnet.id
+      private_ip_address_allocation = "Dynamic"
+    } 
+    /* depends_on = [
+    azurerm_network_security_group_association.nsg_assc_web
+  ] */
+  
+}
