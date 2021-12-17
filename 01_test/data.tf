@@ -30,6 +30,10 @@ variable "bassubnetcidr" {
   type    = string
   default = "172.16.4.0/24"
 }
+variable "imgsubnetcidr" {
+  type    = string
+  default = "172.16.5.0/24"
+}
 #=========web_nsg_rule============================
 variable "web_priority" {
   type    = string
@@ -57,8 +61,8 @@ variable "web_sport" {
 }
 
 variable "web_dport" {
-  type    = string
-  default = "80"
+  type    = list(string)
+  default = ["80" , "22"]
 }
 
 variable "web_sprefix" {
@@ -97,8 +101,8 @@ variable "was_sport" {
 }
 
 variable "was_dport" {
-  type    = string
-  default = "80"
+  type    = list(string)
+  default = ["8080" , "22"]
 }
 
 variable "was_sprefix" {
@@ -139,7 +143,7 @@ variable "db_sport" {
 
 variable "db_dport" {
   type    = string
-  default = "*"
+  default = "3306"
 }
 
 variable "db_sprefix" {
@@ -148,6 +152,46 @@ variable "db_sprefix" {
 }
 
 variable "db_dprefix" {
+  type    = string
+  default = "*"
+}
+#####################IMG_nsg_rule#######################
+variable "img_priority" {
+  type    = string
+  default = "103"
+}
+
+variable "img_direction" {
+  type    = string
+  default = "Inbound"
+}
+
+variable "img_access" {
+  type    = string
+  default = "Allow"
+}
+
+variable "img_protocol" {
+  type    = string
+  default = "Tcp"
+}
+
+variable "img_sport" {
+  type    = string
+  default = "*"
+}
+
+variable "img_dport" {
+  type    = list(string)
+  default = ["80" , "8080" , "22"]
+}
+
+variable "img_sprefix" {
+  type    = string
+  default = "*"
+}
+
+variable "img_dprefix" {
   type    = string
   default = "*"
 }
