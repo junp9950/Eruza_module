@@ -74,6 +74,12 @@ variable "web_dprefix" {
   type    = string
   default = "*"
 }
+
+variable "web_ipcfg" {
+  type = string
+  default = "Dynamic"  
+}
+
 #===========was_nsg_rule===========================
 variable "was_priority" {
   type    = string
@@ -194,4 +200,75 @@ variable "img_sprefix" {
 variable "img_dprefix" {
   type    = string
   default = "*"
+}
+
+variable "bas_allocation" {
+  type = string
+  default = "Static"  
+}
+
+variable "bas_sku" {
+  type = string
+  default = "Standard"  
+}
+
+variable "elb_pub_allo" {
+  type = string
+  default = "Static"
+}
+
+variable "elb_pub_sku" {
+  type = string
+  default = "Standard"
+}
+
+variable "elb_sku" {
+  type = string
+  default = "Standard"
+}
+
+variable "elb_protocol" {
+  type = string
+  default = "Http"
+}
+
+variable "elb_path" {
+  type = string
+  default = "/health.html"
+}
+
+variable "elb_port" {
+  type = number
+  default = 80
+}
+
+variable "e_front_port" {
+  type = number
+  default = 80
+}
+
+variable "e_back_port"{
+  type = number
+  default = 80
+}
+
+variable "front_ipcfg" {
+  type = string
+  default = "lb_front_pub"
+  
+}
+
+variable "elb_rule_proto" {
+  type = string
+  default = "Tcp"
+}
+
+variable "elb_out_proto" {
+  type = string
+  default = "All"
+}
+
+variable "allo_out_ports" {
+  type = number
+  default = 1024  
 }

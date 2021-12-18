@@ -6,7 +6,12 @@ terraform {
     }
   }
 }
-
+#vpc
+#web
+#Was
+#db
+#bastion
+#image
 provider "azurerm" {
   features {}
   subscription_id = "268a434d-f7e6-4966-bb27-d29e20a1b360"
