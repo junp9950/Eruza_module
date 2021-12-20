@@ -324,5 +324,5 @@ variable "ilb_rule_back_port" {
 
 variable "ilb_rule_proto" {
   type = string
-  default = Tcp
+  default = "Tcp"
 }
