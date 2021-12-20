@@ -326,3 +326,306 @@ variable "ilb_rule_proto" {
   type = string
   default = "Tcp"
 }
+variable "web-vm-size" {
+  type = string
+  default = "Standard_DS1_v2"
+}
+
+variable "webvm-comname" {
+  type = string
+  default = "junp"
+}
+
+variable "webvm-username" {
+  type = string
+  default = "rara"
+}
+
+variable "webvm-sshkey-user" {
+  type = string
+  default = "rara"
+}
+
+variable "webvm-disk-cach" {
+  type = string
+  default = "ReadWrite"
+}
+
+variable "webvm-disk-type" {
+  type = string
+  default = "StandardSSD_LRS"
+}
+
+variable "webvm-img-pub" {
+  type = string
+  default = "OpenLogic"
+}
+
+variable "webvm-img-off" {
+  type = string
+  default = "CentOS"
+}
+
+variable "webvm-img-sku" {
+  type = string
+  default = "7.5"
+}
+
+variable "webvm-img-ver" {
+  type = string
+  default = "latest"
+}
+
+/*variable "del-os-termi" {
+  default = true
+}
+variable "del-data-termi" {
+  default = true
+}
+variable "vm-disk-cach" {
+  type = string
+  default = "ReadWrite"
+}
+variable "vm-disk-opt" {
+  type = string
+  default = "FromImage"
+}
+variable "vm-disk-type" {
+  type = string
+  default = "Standard_LRS"
+}
+variable "vm-os-comname" {
+  type = string
+  default = "junp"
+}
+variable "vm-os-username" {
+  type = string
+  default = "rara"
+}
+variable "vm-os-userpw" {
+  type = string
+  default = "tlswldnd123@"
+}*/
+
+variable "web-vmex-pub" {
+  type = string
+  default = "Microsoft.Azure.Extensions"
+}
+
+variable "web-vmex-type" {
+  type = string
+  default = "CustomScript"
+}
+
+variable "web-vmex-typever" {
+  type = string
+  default = "2.0"
+}
+
+######################111 was vm
+variable "was-pubip-allo" {
+  type = string
+  default = "Static"
+}
+
+variable "was-pubip-sku" {
+  type = string
+  default = "Standard"
+}
+
+variable "was-vm-size" {
+  type = string
+  default = "Standard_DS1_v2"
+}
+
+variable "wasvm-img-pub" {
+  type = string
+  default = "Canonical"
+}
+
+variable "wasvm-img-off" {
+  type = string
+  default = "UbuntuServer"
+}
+
+variable "wasvm-img-sku" {
+  type = string
+  default = "18.04-LTS"
+}
+
+variable "wasvm-img-ver" {
+  type = string
+  default = "latest"
+}
+
+variable "wasvm-disk-cach" {
+  type = string
+  default = "ReadWrite"
+}
+
+variable "wasvm-disk-opt" {
+  type = string
+  default = "FromImage"
+}
+
+variable "wasvm-disk-type" {
+  type = string
+  default = "Standard_LRS"
+}
+
+variable "wasvm-os-comname" {
+  type = string
+  default = "was"
+}
+
+variable "wasvm-os-username" {
+  type = string
+  default = "rara"
+}
+
+variable "wasvm-os-userpw" {
+  type = string
+  default = "tlswldnd123@"
+}
+
+variable "wasvm-dis-pw-auth" {
+  default = false
+}
+##########################112 db
+variable "db-ver" {
+  type = string
+  default = "5.7"
+}
+
+variable "db-admin" {
+  type = string
+  default = "rara"
+}
+
+variable "db-admin-pw" {
+  type = string
+  default = "tlswldnd123@"
+}
+
+variable "db-sku-name" {
+  type = string
+  default = "GP_Gen5_2"
+}
+
+variable "ssl-enforce" {
+  default = false
+}
+
+variable "ssl-mb" {
+  type = number
+  default = 5120
+}
+
+variable "db-charset" {
+  type = string
+  default = "utf8"
+}
+
+variable "db-colla" {
+  type = string
+  default = "utf8_unicode_ci"
+}
+
+variable "db-fw-startip" {
+  type = string
+  default = "0.0.0.0"
+}
+
+variable "db-fw-endip" {
+  type = string
+  default = "0.0.0.0"
+}
+
+variable "db-pri-ser-isconnec" {
+  default = true
+}
+
+/*##########################112 was img
+variable "was-img-nif-ipconfig" {
+  type = string
+  default = "Dynamic"
+}
+
+variable "was-img-vm-size" {
+  type = string
+  default = "Standard_DS1_v2"
+}
+
+variable "was-img-vm-username" {
+  type = string
+  default = "rara"
+}
+
+variable "was-img-vm-comname" {
+  type = string
+  default = "wasvm"
+}
+
+variable "was-img-vm-sshkey" {
+  type = string
+  default = "rara"
+}
+
+variable "was-img-vm-username" {
+  type = string
+  default = "rara"
+}
+
+variable "was-img-vm-disk-cach" {
+  type = string
+  default = "ReadWrite"
+}
+variable "was-img-vm-disk-acctype" {
+  type = string
+  default = "StandardSSD_LRS"
+}
+
+variable "was-img-vm-refer-pub" {
+  type = string
+  default = "Canonical"
+}
+variable "was-img-vm-refer-off" {
+  type = string
+  default = "UbuntuServer"
+}
+variable "was-img-vm-refer-sku" {
+  type = string
+  default = "18.04-LTS"
+}
+variable "was-img-vm-refer-ver" {
+  type = string
+  default = "latest"
+}
+
+variable "was-img-vmex-pub" {
+  type = string
+  default = "Microsoft.Azure.Extensions"
+}
+variable "was-img-vmex-type" {
+  type = string
+  default = "CustomScript"
+}
+variable "was-img-vmex-typever" {
+  type = string
+  default = "2.0"
+}
+
+variable "was-shareimg-ostype" {
+  type = string
+  default = "Linux"
+}
+
+variable "was-shareimg-spe" {
+  default = true
+}
+
+variable "was-shareimg-ostype" {
+  type = string
+  default = "Linux"
+}
+*/
