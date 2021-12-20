@@ -156,9 +156,9 @@ resource "azurerm_network_interface" "web_vm_nif" {
   resource_group_name = azurerm_resource_group.jwrg.name
 
   ip_configuration {
-    name                          = "${var.name}_web_vm_pub"
+    name                          = var.web_vm_pub
     subnet_id                     = azurerm_subnet.web_subnet.id
-    private_ip_address_allocation = var.web_ipcfg
+    private_ip_address_allocation = var.web_ipcfg_allo
   }
   
   depends_on = [

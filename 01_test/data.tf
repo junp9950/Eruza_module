@@ -75,11 +75,15 @@ variable "web_dprefix" {
   default = "*"
 }
 
-variable "web_ipcfg" {
+variable "web_ipcfg_allo" {
   type = string
   default = "Dynamic"  
 }
 
+variable "web_vm_pub" {
+  type = string
+  default = "web_vm_pub"
+}
 #===========was_nsg_rule===========================
 variable "was_priority" {
   type    = string
@@ -211,7 +215,7 @@ variable "bas_sku" {
   type = string
   default = "Standard"  
 }
-
+#=================================ELB===================================
 variable "elb_pub_allo" {
   type = string
   default = "Static"
@@ -252,7 +256,7 @@ variable "e_back_port"{
   default = 80
 }
 
-variable "front_ipcfg" {
+variable "elb_ipcfg" {
   type = string
   default = "lb_front_pub"
   
@@ -271,4 +275,54 @@ variable "elb_out_proto" {
 variable "allo_out_ports" {
   type = number
   default = 1024  
+}
+
+variable "elb_nat_rule_proto" {
+  type = string
+  default = "Tcp"  
+}
+
+variable "elb_nat_front_port" {
+  type = number
+  default = 22  
+}
+
+variable "elb_nat_back_port" {
+  type = number
+  default = 22  
+}
+#==================================ILB================================
+variable "ilb_sku" {
+  type = string
+  default = "Standard"
+}
+
+variable "ilb_front_ip" {
+  type = string
+  default = "ilb_front_ip"
+}
+
+variable "ilb_pip_allo" {
+  type = string
+  default = "Dynamic"
+}
+
+variable "ilb_probe_port" {
+  type = number
+  default = 8080
+}
+
+variable "ilb_rule_front_port" {
+  type = number
+  default = 8080
+}
+
+variable "ilb_rule_back_port" {
+  type = number
+  default = 8080
+}
+
+variable "ilb_rule_proto" {
+  type = string
+  default = Tcp
 }
